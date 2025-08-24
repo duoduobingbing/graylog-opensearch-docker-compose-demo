@@ -1,7 +1,9 @@
+# For max. versions see https://go2docs.graylog.org/current/downloading_and_installing_graylog/red_hat_installation_os.htm
+
 services:
   # MongoDB: https://hub.docker.com/_/mongo/
   mongodb:
-    image: "mongo:6.0"  
+    image: "mongo:7"  
     #restart: "on-failure"
     environment:
       - TZ=Asia/Shanghai
@@ -12,7 +14,7 @@ services:
       - "mongodb_config:/data/configdb"  
   
   opensearch:
-    image: opensearchproject/opensearch:2.12.0
+    image: opensearchproject/opensearch:2.15.0
     container_name: opensearch
     hostname: opensearch
     volumes:
@@ -27,7 +29,7 @@ services:
       # Can generate a password for `OPENSEARCH_INITIAL_ADMIN_PASSWORD` using a linux device via:
       # tr -dc A-Z-a-z-0-9_@#%^-_=+ < /dev/urandom  | head -c${1:-32}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD="@admin@1234567890@ABC"
-      - TZ=Europe/Zurich
+      - TZ=Asia/Shanghai
     ports:
       - "9200:9200"
     networks:
@@ -43,7 +45,9 @@ services:
   # Graylog: https://hub.docker.com/r/graylog/graylog-enterprise
   graylog:
     hostname: "server"
-    image: "${GRAYLOG_IMAGE:-graylog/graylog:6.1}"
+    build: 
+      context: .
+      dockerfile: ./Graylog-Custom.Dockerfile
     depends_on:
       mongodb:
         condition: "service_started"
@@ -52,6 +56,7 @@ services:
     entrypoint: "/usr/bin/tini -- wait-for-it opensearch:9200 --  /docker-entrypoint.sh"
     environment:
       GRAYLOG_NODE_ID_FILE: "/usr/share/graylog/data/data/node-id"
+      #Login @ http://127.0.0.1:9000 with user=admin and password=<GRAYLOG_PASSWORD_SECRET>
       GRAYLOG_PASSWORD_SECRET: "admin1234567890ABC"
       GRAYLOG_ROOT_PASSWORD_SHA2: "FFC7D1D049BA9273DF5D69114E5AD1AD291D93F99E5465992AD7AD3E50AA4263"
       GRAYLOG_REPORT_DISABLE_SANDBOX: true
