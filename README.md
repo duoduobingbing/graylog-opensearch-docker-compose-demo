@@ -14,3 +14,5 @@ You can log in at `http://localhost:9000` with the credentials mentioned in the 
 
 GELF messages can be sent to 127.0.0.1:12201 via TCP or UDP.
 
+## Upgrading versions
+If you want to upgrade the dependency version e.g. of MongoDB, please look at the [official compatibility matrix of Graylog](https://go2docs.graylog.org/current/downloading_and_installing_graylog/compatibility_matrix.htm)
