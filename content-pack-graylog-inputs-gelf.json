@@ -1,10 +1,10 @@
 {
   "v": 1,
-  "id": "ced40dca-1c87-42bb-9791-a0b89d5fffe8",
+  "id": "79356b29-d642-419b-861b-ebc6c6a75c15",
   "rev": 1,
   "name": "Input Content Pack",
   "summary": "Input Content Pack",
-  "description": "",
+  "description": "Input Content Pack",
   "vendor": "example@example.localhost",
   "url": "",
   "parameters": [],
@@ -15,7 +15,7 @@
         "name": "input",
         "version": "1"
       },
-      "id": "1bd76672-a467-4313-ae8e-681b7bbae8a9",
+      "id": "e76af90a-de73-481f-821a-ef35c9e75f8a",
       "data": {
         "title": {
           "@type": "string",
@@ -76,7 +76,7 @@
           },
           "number_worker_threads": {
             "@type": "integer",
-            "@value": 24
+            "@value": 22
           },
           "tls_key_password": {
             "@type": "string",
@@ -97,7 +97,7 @@
       "constraints": [
         {
           "type": "server-version",
-          "version": ">=6.1.11+110cd6d"
+          "version": ">=6.3.5+eaa4b5d"
         }
       ]
     },
@@ -107,7 +107,7 @@
         "name": "input",
         "version": "1"
       },
-      "id": "fb3f0bfd-aa5c-4fda-b6b1-5ef4615cc741",
+      "id": "ac3c2c34-13cf-457b-9619-c731734dadd8",
       "data": {
         "title": {
           "@type": "string",
@@ -124,7 +124,7 @@
           },
           "number_worker_threads": {
             "@type": "integer",
-            "@value": 24
+            "@value": 22
           },
           "charset_name": {
             "@type": "string",
@@ -153,7 +153,7 @@
       "constraints": [
         {
           "type": "server-version",
-          "version": ">=6.1.11+110cd6d"
+          "version": ">=6.3.5+eaa4b5d"
         }
       ]
     }

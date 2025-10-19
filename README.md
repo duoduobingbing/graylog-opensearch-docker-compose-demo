@@ -16,3 +16,6 @@ GELF messages can be sent to 127.0.0.1:12201 via TCP or UDP.
 
 ## Upgrading versions
 If you want to upgrade the dependency version e.g. of MongoDB, please look at the [official compatibility matrix of Graylog](https://go2docs.graylog.org/current/downloading_and_installing_graylog/compatibility_matrix.htm)
+
+## Exporting/Importing Content Packs
+Please look at [the documentation for content packs](https://go2docs.graylog.org/current/what_more_can_graylog_do_for_me/content_packs.html)

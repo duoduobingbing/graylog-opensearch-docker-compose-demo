@@ -3,7 +3,7 @@
 services:
   # MongoDB: https://hub.docker.com/_/mongo/
   mongodb:
-    image: "mongo:7"  
+    image: "mongo:8"  
     #restart: "on-failure"
     environment:
       - TZ=Asia/Shanghai
@@ -14,7 +14,7 @@ services:
       - "mongodb_config:/data/configdb"  
   
   opensearch:
-    image: opensearchproject/opensearch:2.15.0
+    image: opensearchproject/opensearch:2.19.3
     container_name: opensearch
     hostname: opensearch
     volumes:
