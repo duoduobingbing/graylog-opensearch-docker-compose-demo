@@ -5,13 +5,13 @@
 
 version: 2
 
-open-pull-requests-limit: 1000
 
 updates:
   - package-ecosystem: "docker-compose" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 1000
   # Enable version updates for Docker
   - package-ecosystem: "docker"
     # Look for a `Dockerfile` in the `root` directory
@@ -19,3 +19,4 @@ updates:
     # Check for updates once a week
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 1000
