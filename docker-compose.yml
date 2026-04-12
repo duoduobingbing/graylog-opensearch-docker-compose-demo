@@ -14,7 +14,7 @@ services:
       - "mongodb_config:/data/configdb"  
   
   opensearch:
-    image: opensearchproject/opensearch:2.19.4
+    image: opensearchproject/opensearch:3.6.0
     container_name: opensearch
     hostname: opensearch
     volumes:
